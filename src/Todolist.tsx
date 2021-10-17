@@ -1,4 +1,4 @@
-import React, {ChangeEvent} from "react";
+import React, {ChangeEvent, KeyboardEvent} from "react";
 import s from './Todolist.module.css'
 
 export type ListType = {
@@ -18,13 +18,19 @@ export type TodolistType = {
 
 export const Todolist: React.FC<TodolistType> = ({value, onChangeValue, addList, removeList, changeStatus, lists}) => {
 
+    const onKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            addList()
+        }
+    }
 
     return <div className={s.todolist}>
         <h2>List</h2>
         <input type="text"
                value={value}
                onChange={onChangeValue}
-                className={s.input}
+               onKeyPress={onKeyPress}
+               className={s.input}
         />
         <button className={s.button} onClick={addList}>+</button>
 
@@ -32,12 +38,15 @@ export const Todolist: React.FC<TodolistType> = ({value, onChangeValue, addList,
             {lists.map(l => {
 
 
-                return <li key={l.id}>
+                return <li key={l.id} className={l.isDone? 'isDone' : ''}>
                     <input type="checkbox"
                            checked={l.isDone}
-                           onChange={(e) => { changeStatus(l.id, e.currentTarget.checked)}}
+                           onChange={(e) => {
+                               changeStatus(l.id, e.currentTarget.checked)
+                           }}
+
                     />{l.title}
-                    <button onClick={() => removeList(l.id)}>x</button>
+                    <button onClick={() => removeList(l.id)} className={s.button2}>x</button>
                 </li>
             })}
         </ul>

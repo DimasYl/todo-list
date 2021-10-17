@@ -14,7 +14,7 @@ function App() {
     let [value, setValue] = useState('')
 
     const addList = () => {
-        if(value !== ''){
+        if (value !== '') {
             let list = {id: v1(), title: value, isDone: false}
             setLists([...lists, list])
             setValue('')
@@ -32,7 +32,7 @@ function App() {
 
     const changeStatus = (taskId: string, isDone: boolean) => {
         let list = lists.find(l => l.id === taskId)
-        if(list){
+        if (list) {
             list.isDone = isDone
             setLists([...lists])
         }
@@ -40,7 +40,13 @@ function App() {
 
     return (
         <div className="App">
-            <Todolist value={value} onChangeValue={onChangeValue} addList={addList} lists={lists} removeList={removeList} changeStatus={changeStatus}/>
+            <Todolist value={value}
+                      onChangeValue={onChangeValue}
+                      addList={addList}
+                      removeList={removeList}
+                      changeStatus={changeStatus}
+                      lists={lists}
+            />
         </div>
     );
 }
