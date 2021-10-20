@@ -11,11 +11,10 @@ function App() {
 
     const addList = () => {
         if (value !== '') {
-            let list = {id: 5, title: value, completed: false}
-            setLists([...lists, list])
+            let list = {id: Date.now(), title: value, completed: false}
+            setLists([list, ...lists])
             setValue('')
-        }
-        else {
+        } else {
             setError('Enter correct value')
         }
     }
