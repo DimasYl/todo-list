@@ -1,14 +1,12 @@
-.todolist {
-    margin: 20px;
-}
 .todolist h2 {
-    text-align: center;
+    margin-left: 60px;
 }
+
 .input {
     width: 200px;
     border: 2px solid #8a8383;
     border-radius: 4px;
-    margin: 8px 0;
+    margin-left: 20px;
     outline: none;
     padding: 4px;
     box-sizing: border-box;
@@ -17,25 +15,26 @@
 
 .input:focus {
     border-color: dodgerBlue;
-    box-shadow: 0 0 8px 0 dodgerBlue;
+    box-shadow: 0 0 10px 0 dodgerBlue;
 }
 
-.button {
+.addButton {
     display: inline-block;
-    font-size: 70%;
     color: rgba(255, 255, 255, .9);
-    border: 1px solid  #3192e3;
+    border: 1px solid #3192e3;
     border-radius: 6px;
     outline: none;
-    height: 29px;
-    width: 29px;
+    height: 28px;
+    width: 28px;
     background: #3192e3;
-}
-.button2 {
-    display: inline-block;
-    border-radius: 20px;
-    border: 1px solid  #3192e3;
-    background: #3192e3;
-    color: rgba(255, 255, 255, .9);
 }
 
+.addButton:hover {
+    border-color: dodgerBlue;
+    box-shadow: 0 0 10px 0 dodgerBlue;
+}
+
+.error {
+    margin-left: 10px;
+    color: red;
+}

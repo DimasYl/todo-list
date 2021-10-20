@@ -1,0 +1,23 @@
+.input {
+    width: 80px;
+    height: 13px;
+    outline: none;
+    border-radius: 3px;
+}
+.input:focus {
+    border-color: dodgerBlue;
+    box-shadow: 0 0 10px 0 dodgerBlue;
+}
+
+.removeButton {
+    display: inline-block;
+    border-radius: 20px;
+    border: 1px solid #3192e3;
+    background: #3192e3;
+    color: rgba(255, 255, 255, .9);
+}
+
+.removeButton:hover {
+    border-color: dodgerBlue;
+    box-shadow: 0 0 10px 0 dodgerBlue;
+}
